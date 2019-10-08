@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
+*{
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+#contentToConvert{
+  font-size: 40px;
+  width: 3508px;
+  height: 2480px;
+  border: solid 1px black;
+  overflow: auto;
+  position: relative;
+  .subpage{
+    width: 50%;
+    float: left;
+    padding: 80px;
+  }
+}
+.flight{
+  width: 100%;
+  position: relative;
+  overflow: auto;
+  .left-flight-side{
+    padding-top: 10px;
+    width: 15%;
+    float: left;
+    text-align: right;
+    padding-right: 30px;
+    text-transform: uppercase;
+  }
+  .right-flight-side{
+    width: 85%;
+    padding-left: 80px;
+    float: left;
+    padding-bottom: 100px;
+    border-left: solid 1px black;
+    min-height: 500px;
+  }
+  .right-absolute{
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    text-align: right;
+    right: 0px;
+    top:0;
+    .locator{
+      text-transform: uppercase;
+      border: solid 2px;
+      text-align: center;
+      padding: 20px;
+      font-size: 48px;
+    }
+    .price{
+      width: 100%;
+      text-align: right;
+      margin: 20px 0;
+      font-size: 48px;
+    }
+  }
+}
+.row{
+  display: inline-block;
+  width: 100%;
+  padding-bottom: 10px;
+  .airplane-icon{
+    width: 180px;
+    height: 50px;
+    float: left;
+    text-align: center;
+    margin-top: 20px;
+
+  }
+  .iata-code{
+    font-size: 70px;
+    font-weight: 700;
+    float: left;
+    text-transform: uppercase;
+  }
+  .flight-hour{
+    float: left;
+    font-size: 52px;
+    margin-right: 190px;
+  }
+  .airline-image{
+    width: 60px;
+    border-radius: 30px;
+    height: 60px;
+    background: grey;
+    float: left;
+    margin-right: 30px;
+  }
+  .memo{
+    width: 100%;
+    background: #efefef;
+    padding: 30px 20px;
+    margin-top: 10px;
+    color: #575757;
+  }
+}
