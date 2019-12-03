@@ -9,6 +9,8 @@ import { RoutesComponent } from './containers/routes/routes.component';
 import { RouteDetailsComponent } from './containers/route-details/route-details.component';
 import { AddFlightComponent } from './containers/add-flight/add-flight.component';
 import { AddAccommodationComponent } from './containers/add-accommodation/add-accommodation.component';
+import {StoreModule} from '@ngrx/store';
+import {counterReducer} from './counter.reducer';
 
 
 @NgModule({
@@ -23,7 +25,8 @@ import { AddAccommodationComponent } from './containers/add-accommodation/add-ac
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    StoreModule.forRoot({ count: counterReducer })
   ],
   providers: [],
   bootstrap: [AppComponent]
