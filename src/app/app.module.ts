@@ -11,6 +11,9 @@ import { AddFlightComponent } from './containers/add-flight/add-flight.component
 import { AddAccommodationComponent } from './containers/add-accommodation/add-accommodation.component';
 import {StoreModule} from '@ngrx/store';
 import {counterReducer} from './counter.reducer';
+import {ReactiveFormsModule} from '@angular/forms';
+import {AeroDataBoxService} from './services/AeroDataBox.service';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -26,9 +29,13 @@ import {counterReducer} from './counter.reducer';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     StoreModule.forRoot({ count: counterReducer })
   ],
-  providers: [],
+  providers: [
+    AeroDataBoxService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
