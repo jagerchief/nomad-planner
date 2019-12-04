@@ -14,6 +14,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {AddRouteComponent} from './containers/add-route/add-route.component';
 import {reducer} from './reducers/route.reducer';
 import { StoreModule } from '@ngrx/store';
+import {LocalStorageService} from './services/LocalStorage.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { StoreModule } from '@ngrx/store';
     })
   ],
   providers: [
-    AeroDataBoxService
+    AeroDataBoxService,
+    LocalStorageService
   ],
   bootstrap: [AppComponent]
 })
