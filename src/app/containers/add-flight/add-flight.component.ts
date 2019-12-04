@@ -10,22 +10,66 @@ import {AeroDataBoxService} from '../../services/AeroDataBox.service';
 export class AddFlightComponent implements OnInit {
 
   public addFlightForm: FormGroup;
+  public possibleFlights = [
+    {
+      "departure":{
+        "airport":{
+          "icao":"LEBL",
+          "iata":"BCN",
+          "name":"Barcelona",
+          "shortName":"Barcelona",
+          "municipalityName":"Barcelona",
+          "location":{
+            "lat":41.2971,
+            "lon":2.078459
+          }
+        },
+        "scheduledTimeLocal":"2019-12-04 16:55+01:00",
+        "actualTimeLocal":"2019-12-04 16:55+01:00",
+        "scheduledTimeUtc":"2019-12-04 15:55Z",
+        "actualTimeUtc":"2019-12-04 15:55Z",
+        "quality":[
+          "Basic",
+          "Live"
+        ]
+      },
+      "arrival":{
+        "airport":{
+          "icao":"LHBP",
+          "iata":"BUD",
+          "name":"Budapest, Budapest Ferenc Liszt",
+          "shortName":"Ferenc Liszt",
+          "municipalityName":"Budapest",
+          "location":{
+            "lat":47.4369,
+            "lon":19.2555981
+          }
+        },
+        "scheduledTimeLocal":"2019-12-04 19:35+01:00",
+
+      },
+      "airline":{
+        "name":"Ryanair"
+      }
+    }
+  ];
   constructor(private fb: FormBuilder, private dataBoxService: AeroDataBoxService) { }
 
   ngOnInit() {
     this.addFlightForm = this.fb.group({
-      flightNum: [''],
-      dateFrom: ['']
+      flightNum: ['FR8394'],
+      dateFrom: ['2019-12-04']
     });
   }
 
   getFlightInfo() {
-    this.dataBoxService.getFlightInfo('Fr', 'asdasd')
+    const flightNum = this.addFlightForm.controls.flightNum.value;
+    const date = this.addFlightForm.controls.dateFrom.value;
+    this.dataBoxService.getFlightInfo(flightNum, date)
         .subscribe(response => {
           console.log(response);
+          this.possibleFlights = response;
         });
-    console.log(this.addFlightForm.controls.flightNum.value);
-    console.log(this.addFlightForm.controls.dateFrom.value);
   }
 
 }

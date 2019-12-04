@@ -1,6 +1,6 @@
 import {Route} from '../models/route';
 import * as RouteActions from './../actions/routes.actions';
-import {fromJS} from 'immutable';
+
 
 const initialState = loadState();
 
@@ -14,17 +14,15 @@ export function reducer(state: Route[] = initialState, action: RouteActions.Acti
     }
 }
 
+//this shoul be in localstorage service but I dont know how to call it
 function loadState() {
     try {
         const serializedData = localStorage.getItem('state');
-        console.log('loading state: '+ serializedData);
         if (serializedData === null) {
             return [];
         }
-        console.log(JSON.parse(serializedData));
         return JSON.parse(serializedData);
     } catch (error) {
-        console.log(error);
         return [];
     }
 }

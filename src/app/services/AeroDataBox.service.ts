@@ -9,7 +9,7 @@ export class AeroDataBoxService {
     }
 
     getFlightInfo(flightNum: string, date: string) {
-        return this.http.get('https://aerodatabox.p.rapidapi.com/flights/DL47/2019-08-29',
+        return this.http.get('https://aerodatabox.p.rapidapi.com/flights/'+flightNum+'/'+date,
             {
                 headers: new HttpHeaders()
                     .append('x-rapidapi-host', 'aerodatabox.p.rapidapi.com')

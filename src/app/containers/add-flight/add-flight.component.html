@@ -7,3 +7,12 @@
   <input ype="text" class="input-group" formControlName="dateFrom" placeholder="2019-08-29"/>
   <div (click)="getFlightInfo()">Get flight info</div>
 </form>
+<div class="possible-flights">
+  <div class="flight" *ngFor="let flight of possibleFlights;">
+    <p>{{flight.departure.airport.iata}}</p>
+    <p>{{flight.departure.scheduledTimeLocal}}</p>
+    <p>{{flight.arrival.airport.iata}}</p>
+    <p>{{flight.arrival.scheduledTimeLocal}}</p>
+    <p>{{flight.airline.name}}</p>
+  </div>
+</div>
