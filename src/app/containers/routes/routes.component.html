@@ -1,3 +1,6 @@
-<p>
-  routes works!
-</p>
+<h3>Routes</h3>
+<ul>
+  <li *ngFor="let route of routes | async">
+    <p>{{route.name}}</p>
+  </li>
+</ul>

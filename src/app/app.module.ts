@@ -12,7 +12,8 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {AeroDataBoxService} from './services/AeroDataBox.service';
 import {HttpClientModule} from '@angular/common/http';
 import {AddRouteComponent} from './containers/add-route/add-route.component';
-
+import {reducer} from './reducers/route.reducer';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,10 @@ import {AddRouteComponent} from './containers/add-route/add-route.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot({
+      routes: reducer
+    })
   ],
   providers: [
     AeroDataBoxService

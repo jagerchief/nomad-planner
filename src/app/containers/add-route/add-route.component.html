@@ -1,1 +1,5 @@
-<h1>add route</h1>
+<h2>add route</h2>
+<input type="text" placeholder="name" #name>
+<input type="text" placeholder="image url" #url>
+
+<button (click)="addTutorial(name.value,url.value)">Add a Route</button>
