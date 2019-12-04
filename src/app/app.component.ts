@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {Store} from '@ngrx/store';
+import {AppState} from './actions/app.state';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pwa-pdf';
+
+  constructor(private store: Store<AppState>) {
+    store.subscribe( function (storeContent) {
+      console.log(storeContent);
+    });
+  }
 }
